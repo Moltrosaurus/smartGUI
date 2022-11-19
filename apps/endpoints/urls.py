@@ -1,4 +1,5 @@
 from django.conf.urls import url, include
+from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 from apps.endpoints.views import EndpointViewSet
@@ -13,12 +14,12 @@ router.register(r"mlalgorithmstatuses", MLAlgorithmStatusViewSet, basename="mlal
 router.register(r"mlrequests", MLRequestViewSet, basename="mlrequests")
 
 urlpatterns = [
-    url(r"^api/v1/", include(router.urls)),
+    path('api/v1/', include(router.urls)),
 ]
 '''
 The above code will create REST API routers to our database models. 
 Our models will be accessed by following the URL pattern:
-http://<server-ip>/api/v1/<object-name>
+http://<server-ip>/endpoints/api/v1/<object-name>
 
 v1 in the API address might be needed later for API versioning.
 
