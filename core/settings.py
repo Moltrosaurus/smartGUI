@@ -40,11 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.home',                                    # Enable the inner home (home)
-    'allauth',                                      # OAuth new
-    'allauth.account',                              # OAuth new
-    'allauth.socialaccount',                        # OAuth new 
-    'allauth.socialaccount.providers.github',       # OAuth new 
-    'allauth.socialaccount.providers.twitter',      # OAuth new  
+    'apps.quality1',
+
+
+
     "sslserver"    
 ]
 
