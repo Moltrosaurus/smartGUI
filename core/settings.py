@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'apps.endpoints',
     'apps.ML',
     'apps.ML.income_classifier',
+    'apps.explainer',
 
 
 

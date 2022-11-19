@@ -8,11 +8,12 @@ from django.urls import path
 # from apps.endpoints.urls import urlpatterns as endpoints_urlpatterns (wenn endpoints.urls nicht in workaround)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),          # Django admin route
-    path("", include("apps.authentication.urls")), # Auth routes - login / register
-    path('quality1/', include("apps.quality1.urls")),
-    path('rest/', include("apps.endpoints.urls")),   # workaround für endpoints/urls
+    path('admin/', admin.site.urls),                   # Django admin route
+    path("", include("apps.authentication.urls")),     # Auth routes - login / register
+    path('quality1/', include("apps.quality1.urls")),   # Route to Quality Parameters
+    path('rest/', include("apps.endpoints.urls")),      # workaround für endpoints/urls
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
+    path('explainer/', include("apps.explainer.urls")),           #Route for ExplainerDashboard
     # ADD NEW Routes HERE
 
 
