@@ -51,7 +51,7 @@ html {
 }
 
 @-ms-viewport {
-  width: device-width;
+  width: auto!important;
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -8934,7 +8934,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-hide {
-  font: 0/0 a;
+  font: 0px/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.home',                                    # Enable the inner home (home)
     'apps.quality1',
+    'apps.endpoints',
 
 
 
