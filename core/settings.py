@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework', #add django rest framework
     'apps.home',                                    # Enable the inner home (home)
     'apps.quality1',
     'apps.endpoints',
     'apps.ML',
+    'apps.ML.income_classifier',
 
 
 

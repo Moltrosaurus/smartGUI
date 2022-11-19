@@ -5,16 +5,17 @@ Copyright (c) 2019 - present AppSeed.us
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.urls import path
-# from apps.endpoints.urls import urlpatterns as endpoints_urlpatterns
+# from apps.endpoints.urls import urlpatterns as endpoints_urlpatterns (wenn endpoints.urls nicht in workaround)
 
 urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
     path("", include("apps.authentication.urls")), # Auth routes - login / register
     path('quality1/', include("apps.quality1.urls")),
-    path('endpoints/', include("apps.endpoints.urls")),
+    path('rest/', include("apps.endpoints.urls")),   # workaround für endpoints/urls
     # ADD NEW Routes HERE
 
     # Leave `Home.Urls` as last the last line
     path("", include("apps.home.urls"))         #UI Kits HTML files
 ]
 
+# urlpatterns += endpoints.urlpatterns
