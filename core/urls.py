@@ -12,10 +12,12 @@ urlpatterns = [
     path("", include("apps.authentication.urls")), # Auth routes - login / register
     path('quality1/', include("apps.quality1.urls")),
     path('rest/', include("apps.endpoints.urls")),   # workaround für endpoints/urls
+    path('django_plotly_dash/', include('django_plotly_dash.urls')),
     # ADD NEW Routes HERE
 
+
     # Leave `Home.Urls` as last the last line
-    path("", include("apps.home.urls"))         #UI Kits HTML files
+    path("", include("apps.home.urls")),         #UI Kits HTML files
 ]
 
 # urlpatterns += endpoints.urlpatterns

@@ -30,6 +30,12 @@ ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1',               env('SERVER', default='127.0.0.1') ]
 CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + env('SERVER', default='127.0.0.1') ]
 
+# enables the use of frames within HTML documents
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+#defining primary key type
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
 
     'rest_framework', #add django rest framework
     'apps.home',                                    # Enable the inner home (home)
@@ -46,6 +53,7 @@ INSTALLED_APPS = [
     'apps.endpoints',
     'apps.ML',
     'apps.ML.income_classifier',
+
 
 
 
@@ -61,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',  # for header and footer tags
 ]
 
 ROOT_URLCONF = 'core.urls'
