@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+   # 'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+   # 'channels',
+ #   'channels_redis',
 
     'rest_framework', #add django rest framework
     'apps.home',                                    # Enable the inner home (home)
@@ -53,7 +55,7 @@ INSTALLED_APPS = [
     'apps.endpoints',
     'apps.ML',
     'apps.ML.income_classifier',
-    'apps.explainer',
+   # 'apps.explainer',                #django_plotly_dash Erweiterung
 
 
 
@@ -70,7 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_plotly_dash.middleware.BaseMiddleware',  # for header and footer tags
+ #   'django_plotly_dash.middleware.BaseMiddleware',  # for header and footer tags
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -96,6 +98,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+# ASGI_APPLICATION = 'explainer.routing.application' # django_plotly_dash
+
+# For Channel Layers
+'''
+CHANNEL_LAYERS = {
+    'default': {
+       'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379),],
+        }
+    }
+}
+'''
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -137,6 +153,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'    #aus django_plotly_dash Tutorial (youtube)
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -162,6 +180,26 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 ) 
+
+
+# Für Django_plotly_dash Erweiterung
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+   # 'django_plotly_dash.finders.DashAssetFinder',
+   # 'django_plotly_dash.finders.DashComponentFinder'
+]
+
+#PLOTLY_COMPONENTS = [
+
+  #  'dash_core_components',
+  #  'dash_html_components',
+  #  'dash_render',
+
+   # 'dpd_components'
+#]
+
 
 #############################################################
 # OAuth settings 
