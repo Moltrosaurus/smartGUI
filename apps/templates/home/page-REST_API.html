@@ -1,6 +1,7 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page Bildanalyse {% endblock %}
+
+{% block title %} Django REST-API {% endblock %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -17,11 +18,11 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="page-header-title">
-                                <h5 class="m-b-10">Bildanalyse</h5>
+                                <h5 class="m-b-10">Django REST API</h5>
                             </div>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="javascript:">Bildanalyse</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:">Django REST API</a></li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +36,7 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Quantitative Auswertung von Bildaten</h5>
+                                    <h5>So greifen Sie auf die Django REST API des ML Modells zu</h5>
                                 </div>
                                 <div class="card-block">
                                     <p> Auswertung von Bilddaten, bei denen klassische Verfahren an ihre Grenzen stoßen. <br /> Lokale bzw. geometrische Analyse von Einflussgrößen. <br /> Ermöglichen von Nachverfolgbarkeit.
@@ -52,6 +53,8 @@
                                 <div class="card-block">
                                     <p> Hier sehen Sie bald schöne Bilder.
                                     </p>
+                                    {% load static %}
+                                    <img src="{% static 'assets/images/Bildanalyse.png' %}" alt="Bildanalyse">
                                 </div>
                             </div>
                         </div>
@@ -61,8 +64,9 @@
             </div>
         </div>
     </div>
-
+     </div>
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}
+</div>

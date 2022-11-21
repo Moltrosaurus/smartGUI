@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %}
 
+
 {% block title %} Erklärseite {% endblock %}
 
 <!-- Specific CSS goes HERE -->
@@ -33,14 +34,29 @@
                         <div class="page-wrapper">
                             <!-- [ Main Content ] start -->
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-header">
                                             <h5>Was ist eine Konfusionsmatrix?</h5>
                                         </div>
                                         <div class="card-block">
-                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                            <p>Eine Konfusionsmatrix bildet die vorhergesagten und tatsächlichen Werte ab.<br> Die Klassenbezeichnungen sind mit der Anzahl der Klassen im Datensatz korreliert, und die Werte im Raster stellen die Klassifizierungsergebnisse über eine Reihe von Experimenten dar. <br> Die Konfusionsmatrix ermöglicht die Berechnung der Leistungsmetriken für den Klassifikator. <br> Folgende Abbildung veranschaulicht das Prinzip einer Konfusionsmatrix. Die vorhergesagten Klassenbezeichnungen werden in der ersten Spalte des Rasters angezeigt, während die tatsächlichen (erwarteten) Werte in der ersten Zeile stehen.
+                                                <br> Die Werte in den weißen Zellen zeigen die tatsächlichen Ergebnisse, die von dem trainierten Modell unter Verwendung der Testdaten erzielt wurden. <br> Die diagonale Zahlenreihe stellt die erwarteten richtigen Klassifizierungen dar, während die Zahlen auf beiden Seiten der Diagonale entweder ein falsches Positiv oder ein falsches Negativ darstellen. <br> Dieses Beispielmodell hat neun korrekte Ergebnisse hervorgesagt, aber zwei wurden fälschlicherweise als 0 statt 1 klassifiziert.
                                             </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Was ist eine Konfusionsmatrix?</h5>
+                                        </div>
+                                        <div class="card-block">
+                                         {% load static %}
+                                    <img src="{% static 'assets/images/Konfusionsmatrix.png' %}" alt="Konfusionsmatrix" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
